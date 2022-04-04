@@ -7,8 +7,6 @@ namespace ProjMongoDB.Models
     {
         #region Propriedades
 
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public int Id { get; set; }
 
         public string Street { get; set; }
