@@ -11,6 +11,7 @@ namespace ProjMongoDB.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
+        [BsonRepresentation(BsonType.String)]
         public string Name { get; set; }
 
         public Address Address { get; set; }

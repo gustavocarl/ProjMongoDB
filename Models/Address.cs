@@ -6,9 +6,11 @@ namespace ProjMongoDB.Models
     public class Address
     {
         #region Propriedades
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
 
-        public int Id { get; set; }
-
+        [BsonRepresentation(BsonType.String)]
         public string Street { get; set; }
 
         #endregion

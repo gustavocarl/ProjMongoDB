@@ -11,11 +11,9 @@ namespace ProjMongoDB.Services
 
         public PersonService(IProjMongoDatabaseSettings settings)
         {
-            var person = new MongoClient
-                (settings.ConnectionString);
+            var person = new MongoClient(settings.ConnectionString);
             var database = person.GetDatabase(settings.DatabaseName);
             _persons = database.GetCollection<Person>(settings.PersonCollectionName);
-
         }
 
         public List<Person> Get() => _persons.Find(person => true).ToList();
